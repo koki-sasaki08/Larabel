@@ -1,0 +1,18 @@
+@startuml 実習問題2_1
+    actor ユーザー as a
+    boundary ブラウザ as b
+    control web.php as c
+    control jissyu3_1Cntroller as d
+    boundary input.blade.php as e
+    boundary output.blade.php as f
+
+    a -> b: 該当ページをリクエスト[/jissyu3]
+    b -> c: GET[/jissyu3]
+    c -> d: @index
+    d -> e
+    a -> e: 送信ボタンを押下
+    e -> c: POST
+    c -> d: @post
+    d-> f
+
+@enduml
