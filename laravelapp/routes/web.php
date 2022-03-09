@@ -11,13 +11,15 @@
 |
 */
 
+use App\Http\Middleware\HelloMiddleware;
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 //授業
 
-Route::get('hello', 'HelloController@index'); 
+Route::get('hello', 'HelloController@index');
 Route::post('hello', 'HelloController@post'); 
 
 //実習問題
@@ -30,5 +32,11 @@ Route::post('jissyu3', 'Jissyu3_1Controller@post');
 //3-2
 Route::get('jissyu4', 'Jissyu3_2Controller@index');
 Route::post('jissyu4', 'Jissyu3_2Controller@post');
-//3-3
+//3-3,4,5
 Route::get('jissyu5', 'Jissyu3_3Controller@index');
+//4-1
+Route::get('jissyu6', 'Jissyu4_1Controller@index');
+Route::post('jissyu6', 'Jissyu4_1Controller@post');
+//4-2
+Route::get('jissyu7', 'Jissyu4_2Controller@index');
+Route::post('jissyu7', 'Jissyu4_2Controller@post');
