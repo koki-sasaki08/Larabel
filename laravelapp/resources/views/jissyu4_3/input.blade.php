@@ -12,7 +12,7 @@
    <p>入力に問題があります。再入力して下さい。</p>
    @endif
    <table>
-   <form action="/jissyu7" method="post">
+   <form action="/jissyu8" method="post">
        @csrf
        <tr><th>名　　　前: </th><td><input type="text" name="name" value="{{old('name')}}"></td></tr>
        <tr><th></th><td>※必須項目。10文字以内。</td></tr>
@@ -25,7 +25,7 @@
        <tr><th></th><td><font color="red">{{$errors->first('adress')}}</font></td></tr>
        @endif
        <tr><th>ログインID: </th><td><input type="text" name="login_id" value="{{old('login_id')}}"></td></tr>
-       <tr><th></th><td>※必須項目。数字のみ入力。8文字以上16文字以内の入力。</td></tr>
+       <tr><th></th><td>※必須項目。半角英数数字のみ入力可。8文字以上16文字以内の入力。</td></tr>
        @if ($errors->has('login_id'))
        <tr><th></th><td><font color="red">{{$errors->first('login_id')}}</font></td></tr>
        @endif

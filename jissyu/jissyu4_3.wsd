@@ -1,0 +1,29 @@
+@startuml 実習問題4_12
+    actor ユーザー as a
+    boundary ブラウザ as b
+    control web.php as c
+    control jissyu4_3Cntroller as d
+    boundary input.blade.php as e
+    control jissyu4_3Request as f
+    control jissyu4_3Myrule as g
+    boundary output.blade.php as h
+
+    a -> b: 該当ページをリクエスト[/jissyu8]
+    b -> c: GET[/jissyu8]
+    c -> d: @index
+    d -> e
+    a -> e: 送信ボタンを押下
+    e -> c: POST
+    c -> f: フォームリクエスト
+    f -> g: マイルール呼び出し
+    g ---> f
+    f ---> c
+    c -> d: @post
+
+    alt 成功
+    d -> h
+    else エラー発生
+    d -> e
+    end
+
+@enduml

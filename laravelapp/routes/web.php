@@ -40,3 +40,6 @@ Route::post('jissyu6', 'Jissyu4_1Controller@post');
 //4-2
 Route::get('jissyu7', 'Jissyu4_2Controller@index');
 Route::post('jissyu7', 'Jissyu4_2Controller@post');
+//4-3
+Route::get('jissyu8', 'Jissyu4_3Controller@index');
+Route::post('jissyu8', 'Jissyu4_3Controller@post');
