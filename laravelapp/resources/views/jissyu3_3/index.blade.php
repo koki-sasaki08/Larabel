@@ -1,12 +1,12 @@
 @extends('layouts.jissyu')
 
-@section('title', 'index')
+@section('title', 'jissyu')
 
 @section('menutitle')
 Laravelについて
- @endsection
+@endsection
 
- @section('menu_content')
+@section('menu_content')
 <ul>
     <li>特徴</li>
     <li>バージョン</li>

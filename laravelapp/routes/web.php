@@ -21,6 +21,12 @@ Route::get('/', function () {
 
 Route::get('hello', 'HelloController@index');
 Route::post('hello', 'HelloController@post'); 
+Route::get('hello/add', 'HelloController@add');
+Route::post('hello/add', 'HelloController@create');
+Route::get('hello/edit', 'HelloController@edit');
+Route::post('hello/edit', 'HelloController@update'); 
+Route::get('hello/del', 'HelloController@del');
+Route::post('hello/del', 'HelloController@remove'); 
 
 //実習問題
 
@@ -43,3 +49,14 @@ Route::post('jissyu7', 'Jissyu4_2Controller@post');
 //4-3
 Route::get('jissyu8', 'Jissyu4_3Controller@index');
 Route::post('jissyu8', 'Jissyu4_3Controller@post');
+//4-4
+Route::get('jissyu9', 'Jissyu4_4Controller@index');
+Route::post('jissyu9', 'Jissyu4_4Controller@post');
+
+//効果測定
+
+//1-1
+Route::get('kouka1_1', 'kouka1_1Controller@index');
+//1-2
+Route::get('kouka1_2', 'kouka1_2Controller@index');
+Route::post('kouka1_2', 'kouka1_2Controller@post');

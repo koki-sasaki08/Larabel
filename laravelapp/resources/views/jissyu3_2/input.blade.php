@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Blade/Index</h1>
-    <p>必須事項を記入してください</p>
+    <p>{{$msg}}</p>
     <form method="POST" action="/jissyu4">
         <table>
         @csrf

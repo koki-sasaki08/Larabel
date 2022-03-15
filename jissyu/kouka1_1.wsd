@@ -1,0 +1,22 @@
+@startuml 効果測定1_1
+    actor ユーザー as a
+    boundary ブラウザ as b
+    control web.php as c
+    control kouka1_1Cntroller as d
+    boundary kouka1_1.index.blade.php as e
+    boundary layouts.kouka1_1.blade.php as f
+    boundary components.menu.blade.php as g
+    boundary components.subview.blade.php as h
+
+    a -> b: 該当ページをリクエスト[/kouka1_1]
+    b -> c: GET[/kouka1_1]
+    c -> d: @index
+    d -> e
+    e -> f: @extends
+    f --> e
+    e -> g: @component
+    g --> e
+    e -> h: @include
+    h --> e
+
+@enduml

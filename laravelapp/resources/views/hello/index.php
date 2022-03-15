@@ -13,3 +13,6 @@
         <p> ID=<?php echo $id; ?></p>
     </body>
 </html>
+<ul>
+        @each('components.version',$version,'item')
+      </ul>

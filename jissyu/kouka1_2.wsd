@@ -1,0 +1,26 @@
+@startuml 効果測定1_2
+    actor ユーザー as a
+    boundary ブラウザ as b
+    control web.php as c
+    control kouuka1_2Controller as d
+    boundary input.blade.php as e
+    control kouka1_2Request as f
+    boundary output.blade.php as g
+
+    a -> b: 該当ページをリクエスト[/kouka1_2]
+    b -> c: GET[/kouka1_2]
+    c -> d: @index
+    d -> e
+    a -> e: 送信ボタンを押下
+    e -> c: POST
+    c -> d:@post
+    d -> f: フォームリクエスト
+    f --> d
+
+    alt 成功
+    d -> g
+    else エラー発生
+    d -> e
+    end
+
+@enduml
