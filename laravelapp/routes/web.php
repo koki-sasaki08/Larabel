@@ -27,6 +27,7 @@ Route::get('hello/edit', 'HelloController@edit');
 Route::post('hello/edit', 'HelloController@update'); 
 Route::get('hello/del', 'HelloController@del');
 Route::post('hello/del', 'HelloController@remove'); 
+Route::get('hello/show', 'HelloController@show');
 
 //実習問題
 
@@ -52,6 +53,9 @@ Route::post('jissyu8', 'Jissyu4_3Controller@post');
 //4-4
 Route::get('jissyu9', 'Jissyu4_4Controller@index');
 Route::post('jissyu9', 'Jissyu4_4Controller@post');
+//5-1
+Route::get('jissyu10', 'jissyu5_1Controller@index');
+Route::get('jissyu10/show', 'jissyu5_1Controller@show'); 
 
 //効果測定
 

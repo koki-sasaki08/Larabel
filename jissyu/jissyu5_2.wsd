@@ -1,0 +1,36 @@
+@startuml 実習問題5-1
+    actor ユーザー as a
+    boundary ブラウザ as b
+    control web.php as c
+    control jissyu5_2Cntroller as d
+    boundary index.blade.php as e
+    boundary show.blade.php as f
+    boundary add.blade.php as g
+    boundary edit.blade.php as h
+    boundary del.blade.php as i
+
+    a -> b: 該当ページをリクエスト[/jissyu11]
+    b -> c: GET[/jissyu10]
+    c -> d: @index
+    d -> e
+    a -> e:詳細リンクを押下
+    e -> c:GET[/jissyu10/show]
+    c -> d: @show
+    d -> f
+
+    a -> e:新規登録リンクを押下
+    e -> c:GET[/jissyu10/show]
+    c -> d: @show
+    d -> f
+
+    a -> e:詳細リンクを押下
+    e -> c:GET[/jissyu10/show]
+    c -> d: @show
+    d -> f
+
+    a -> e:詳細リンクを押下
+    e -> c:GET[/jissyu10/show]
+    c -> d: @show
+    d -> f
+
+@enduml
