@@ -10,27 +10,42 @@
     boundary del.blade.php as i
 
     a -> b: 該当ページをリクエスト[/jissyu11]
-    b -> c: GET[/jissyu10]
+    b -> c: GET[/jissyu11]
     c -> d: @index
     d -> e
     a -> e:詳細リンクを押下
-    e -> c:GET[/jissyu10/show]
+    e -> c:GET[/jissyu11/show]
     c -> d: @show
     d -> f
 
     a -> e:新規登録リンクを押下
-    e -> c:GET[/jissyu10/show]
-    c -> d: @show
-    d -> f
+    e -> c:GET[/jissyu11/add]
+    c -> d: @add
+    d -> g
 
-    a -> e:詳細リンクを押下
-    e -> c:GET[/jissyu10/show]
-    c -> d: @show
-    d -> f
+    a -> g:新規登録ボタンを押下
+    g -> c:POST[/jissyu11/create]
+    c -> d: @create
+    d -> e
 
-    a -> e:詳細リンクを押下
-    e -> c:GET[/jissyu10/show]
-    c -> d: @show
-    d -> f
+    a -> e:更新リンクを押下
+    e -> c:POST[/jissyu11/edit]
+    c -> d: @edit
+    d -> h
+
+    a -> h:更新ボタンを押下
+    h -> c:POST[/jissyu11/update]
+    c -> d: @update
+    d -> e
+
+    a -> e:削除リンクを押下
+    e -> c:POST[/jissyu11/del]
+    c -> d: @del
+    d -> i
+
+    a -> i:削除ボタンを押下
+    i -> c:POST[/jissyu11/remove]
+    c -> d: @remove
+    d -> e
 
 @enduml

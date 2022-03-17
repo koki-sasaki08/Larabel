@@ -1,0 +1,23 @@
+@startuml 実習問題6-1
+    actor ユーザー as a
+    boundary ブラウザ as b
+    control web.php as c
+    control jissyu6_1Cntroller as d
+    entity Person as e
+    boundary index.blade.php as f
+    boundary show.blade.php as g
+
+    a -> b: 該当ページをリクエスト[/jissyu13]
+    b -> c: GET[/jissyu13]
+    c -> d: @index
+    d -> e: all()
+    e --> d
+    d -> f
+    a -> b:検索ボタンを押下
+    b -> c:GET[/jissyu13/find]
+    c -> d: @find
+    d -> e: where()->first()
+    e --> d
+    d -> g
+
+@enduml
