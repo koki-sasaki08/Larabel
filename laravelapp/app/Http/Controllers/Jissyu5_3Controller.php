@@ -47,7 +47,7 @@ class Jissyu5_3Controller extends Controller
 				'age' => $request->age,
         ];
         DB::table('people')
-            ->where('id', $request->id);
+            ->where('id', $request->id)
             ->update($param);
         return redirect('/jissyu12');
     }
@@ -61,7 +61,7 @@ class Jissyu5_3Controller extends Controller
     public function remove(Request $request)
     {
         DB::table('people')
-        where('id', $request->id)
+            ->where('id', $request->id)
             ->delete();
         return redirect('/jissyu12');
     }
