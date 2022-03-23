@@ -29,6 +29,11 @@ Route::post('hello/edit', 'HelloController@update');
 Route::get('hello/del', 'HelloController@del');
 Route::post('hello/del', 'HelloController@remove'); 
 Route::get('hello/show', 'HelloController@show');
+
+Route::get('hello/rest', 'HelloController@rest');
+
+Route::get('hello/session', 'HelloController@ses_get');
+Route::post('hello/session', 'HelloController@ses_put'); 
 //person
 Route::get('person', 'PersonController@index');
 Route::get('person/find', 'PersonController@find');
@@ -39,6 +44,13 @@ Route::get('person/edit', 'PersonController@edit');
 Route::post('person/edit', 'PersonController@update');
 Route::get('person/del', 'PersonController@delete');
 Route::post('person/del', 'PersonController@remove');
+//board
+Route::get('board', 'BoardController@index');
+
+Route::get('board/add', 'BoardController@add');
+Route::post('board/add', 'BoardController@create');
+//resouce
+Route::resource('rest', 'RestappController');
 
 
 
@@ -91,6 +103,17 @@ Route::post('jissyu12/remove', 'Jissyu5_3Controller@remove');
 //6-1
 Route::get('jissyu13', 'jissyu6_1Controller@index');
 Route::post('jissyu13/find', 'jissyu6_1Controller@find');
+//6-3
+Route::get('jissyu14', 'Jissyu6_3Controller@index');
+Route::post('jissyu14/find', 'Jissyu6_3Controller@find');
+Route::get('jissyu14/show', 'Jissyu6_3Controller@show');
+Route::get('jissyu14/add', 'Jissyu6_3Controller@add');
+Route::post('jissyu14/create', 'Jissyu6_3Controller@create');
+Route::get('jissyu14/edit', 'Jissyu6_3Controller@edit');
+Route::post('jissyu14/update', 'Jissyu6_3Controller@update');
+Route::get('jissyu14/del', 'Jissyu6_3Controller@del');
+Route::post('jissyu14/remove', 'Jissyu6_3Controller@remove');
+
 
 
 //効果測定
