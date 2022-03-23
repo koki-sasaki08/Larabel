@@ -113,6 +113,12 @@ Route::get('jissyu14/edit', 'Jissyu6_3Controller@edit');
 Route::post('jissyu14/update', 'Jissyu6_3Controller@update');
 Route::get('jissyu14/del', 'Jissyu6_3Controller@del');
 Route::post('jissyu14/remove', 'Jissyu6_3Controller@remove');
+//7-1
+Route::resource('jissyu7_1', 'jissyu7_1Controller');
+Route::post('jissyu7_1/post', 'jissyu7_1Controller@find');	
+//Resourcefulにはfind()メソッドはないので追加
+Route::get('jissyu7_1/{id}/del', 'jissyu7_1Controller@del');
+//Resourcefulにはdel()メソッドはないので追加
 
 
 
