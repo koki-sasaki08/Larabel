@@ -1,0 +1,23 @@
+@startuml 効果測定2_1
+    actor ユーザー as a
+    boundary ブラウザ as b
+    control web.php as c
+    control kouka2_1Controller as d
+    entity Restdata as e
+    boundary index.blade.php as f
+    boundary show.blade.php as g
+
+    a -> b: 該当ページをリクエスト[/kouka2_1]
+    b -> c: GET[/kouka2_1]
+    c -> d: @index
+    d -> e: all()
+    e --> d
+    d -> f
+    a -> b: 検索ボタンを押下
+    b -> c: GET[/kouka2_1/find]
+    c -> d: @find
+    d -> e: where()->first()
+    e --> d
+    d -> g
+
+@enduml

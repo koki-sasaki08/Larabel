@@ -2,15 +2,10 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-
+use App\Person;
 
 class PeopleTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         $param = [
@@ -29,9 +24,11 @@ class PeopleTableSeeder extends Seeder
 
         $param = [
             'name' => 'sachiko',
-            'mail' => 'sathiko@happy.jp',
+            'mail' => 'sachiko@happy.jp',
             'age' => 56,
         ];
         DB::table('people')->insert($param);
+
+        factory(Person::class, 50)->create();//今回は50個のテストデータを作成
     }
 }

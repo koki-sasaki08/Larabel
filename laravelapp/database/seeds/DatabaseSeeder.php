@@ -1,16 +1,12 @@
 <?php
-
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
-    public function run()
-    {
-        $this->call(RestdataTableSeeder::class);
-    }
+   public function run()
+   {
+       $this->call(RestdataTableSeeder::class);
+       $this->call(PeopleTableSeeder::class); //無かった場合は追記すること。
+       $this->call(SubjectTableSeeder::class);
+   }
 }

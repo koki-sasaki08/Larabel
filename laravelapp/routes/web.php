@@ -20,7 +20,8 @@ Route::get('/', function () {
 //授業
 
 //hello
-Route::get('hello', 'HelloController@index');
+Route::get('hello', 'HelloController@index')
+    ->middleware('auth');
 Route::post('hello', 'HelloController@post'); 
 Route::get('hello/add', 'HelloController@add');
 Route::post('hello/add', 'HelloController@create');
@@ -51,8 +52,9 @@ Route::get('board/add', 'BoardController@add');
 Route::post('board/add', 'BoardController@create');
 //resouce
 Route::resource('rest', 'RestappController');
-
-
+//auth
+Route::get('hello/auth', 'HelloController@getAuth');
+Route::post('hello/auth', 'HelloController@postAuth');
 
 
 //実習問題
@@ -127,5 +129,24 @@ Route::get('jissyu7_1/{id}/del', 'jissyu7_1Controller@del');
 //1-1
 Route::get('kouka1_1', 'kouka1_1Controller@index');
 //1-2
-Route::get('kouka1_2', 'kouka1_2Controller@index');
+Route::get('kouka1_2', 'kouka2_1Controller@index');
 Route::post('kouka1_2', 'kouka1_2Controller@post');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+//2-1
+Route::get('kouka2_1', 'kouka2_1Controller@index');
+Route::post('kouka2_1/find', 'kouka2_1Controller@find');
+//2-2
+Route::get('kouka2_2', 'Kouka2_2Controller@index');
+Route::post('kouka2_2/find', 'Kouka2_2Controller@find');
+Route::get('kouka2_2/show', 'Kouka2_2Controller@show');
+Route::get('kouka2_2/add', 'Kouka2_2Controller@add');
+Route::post('kouka2_2/create', 'Kouka2_2Controller@create');
+Route::get('kouka2_2/edit', 'Kouka2_2Controller@edit');
+Route::post('kouka2_2/update', 'Kouka2_2Controller@update');
+Route::get('kouka2_2/del', 'Kouka2_2Controller@del');
+Route::post('kouka2_2/remove', 'Kouka2_2Controller@remove');
+
